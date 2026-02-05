@@ -1,6 +1,8 @@
 
 import React from 'react';
-import { Phone, Mail, MapPin, Instagram, Facebook, Twitter, MessageCircle } from 'lucide-react';
+import { Phone, Mail, MapPin, Instagram, Twitter, MessageCircle } from 'lucide-react';
+import { INSTAGRAM_URL, TIKTOK_URL } from '../constants';
+import TikTokIcon from '../components/TikTokIcon';
 
 const Contact: React.FC = () => {
   return (
@@ -21,21 +23,21 @@ const Contact: React.FC = () => {
                   <Phone size={24} />
                 </div>
                 <h4 className="font-bold">Call Us</h4>
-                <p className="text-slate-600 text-sm">(555) 123-4567</p>
+                <p className="text-slate-600 text-sm">(385) 562-3250</p>
               </div>
               <div className="bg-white p-8 rounded-3xl shadow-sm border border-slate-100 space-y-4">
                 <div className="bg-blue-600/10 w-12 h-12 rounded-xl flex items-center justify-center text-blue-600">
                   <Mail size={24} />
                 </div>
                 <h4 className="font-bold">Email Us</h4>
-                <p className="text-slate-600 text-sm">hello@glossmobile.com</p>
+                <p className="text-slate-600 text-sm">aquaspeed723@gmail.com</p>
               </div>
               <div className="bg-white p-8 rounded-3xl shadow-sm border border-slate-100 space-y-4">
                 <div className="bg-blue-600/10 w-12 h-12 rounded-xl flex items-center justify-center text-blue-600">
                   <MapPin size={24} />
                 </div>
                 <h4 className="font-bold">Service Area</h4>
-                <p className="text-slate-600 text-sm">Greater Los Angeles Area</p>
+                <p className="text-slate-600 text-sm">Serving All of Utah</p>
               </div>
               <div className="bg-white p-8 rounded-3xl shadow-sm border border-slate-100 space-y-4">
                 <div className="bg-blue-600/10 w-12 h-12 rounded-xl flex items-center justify-center text-blue-600">
@@ -49,9 +51,13 @@ const Contact: React.FC = () => {
             <div className="space-y-4">
                <h4 className="font-bold text-lg">Follow Our Journey</h4>
                <div className="flex gap-4">
-                 {[Instagram, Facebook, Twitter].map((Icon, i) => (
-                   <a key={i} href="#" className="bg-white p-4 rounded-2xl shadow-sm border border-slate-100 hover:text-blue-600 hover:-translate-y-1 transition-all">
-                     <Icon size={24} />
+                 {[
+                   { icon: <Instagram size={24} />, href: INSTAGRAM_URL },
+                   { icon: <TikTokIcon size={24} />, href: TIKTOK_URL },
+                   { icon: <Twitter size={24} />, href: '#' }
+                 ].map(({ icon, href }, i) => (
+                   <a key={i} href={href} target={href !== '#' ? '_blank' : undefined} rel={href !== '#' ? 'noopener noreferrer' : undefined} className="bg-white p-4 rounded-2xl shadow-sm border border-slate-100 hover:text-blue-600 hover:-translate-y-1 transition-all">
+                     {icon}
                    </a>
                  ))}
                </div>
@@ -90,11 +96,8 @@ const Contact: React.FC = () => {
               <div className="bg-blue-600 w-12 h-12 rounded-full flex items-center justify-center mx-auto text-white">
                 <MapPin size={24} />
               </div>
-              <h4 className="text-xl font-bold font-lexend">Serving All of SoCal</h4>
-              <p className="text-slate-600">From the beaches of Malibu to the hills of Silver Lake, our mobile vans are always on the move.</p>
-              <div className="pt-4">
-                <span className="bg-green-100 text-green-700 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider">Mobile Service Only</span>
-              </div>
+              <h4 className="text-xl font-bold font-lexend">Serving All of Utah</h4>
+              <p className="text-slate-600">From the mountains of Park City to the sands of St. George, our mobile units are always on the move.</p>
            </div>
         </div>
       </section>

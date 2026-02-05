@@ -9,7 +9,6 @@ import About from './pages/About';
 import Booking from './pages/Booking';
 import Gallery from './pages/Gallery';
 import Contact from './pages/Contact';
-import ChatBot from './components/ChatBot';
 
 const App: React.FC = () => {
   return (
@@ -27,7 +26,6 @@ const App: React.FC = () => {
           </Routes>
         </main>
         <Footer />
-        <ChatBot />
       </div>
     </Router>
   );

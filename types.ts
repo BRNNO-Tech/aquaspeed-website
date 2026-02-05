@@ -28,8 +28,6 @@ export interface BookingDetails {
 
 export interface GalleryItem {
   id: string;
-  title: string;
-  before: string;
-  after: string;
-  category: 'Interior' | 'Exterior' | 'Paint Correction';
+  image: string;
+  caption?: string;
 }

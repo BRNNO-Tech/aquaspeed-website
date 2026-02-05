@@ -1,7 +1,9 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Car, Instagram, Facebook, Phone, Mail, MapPin } from 'lucide-react';
+import { Car, Instagram, Phone, Mail, MapPin } from 'lucide-react';
+import { BOOKING_URL, INSTAGRAM_URL, TIKTOK_URL } from '../constants';
+import TikTokIcon from './TikTokIcon';
 
 const Footer: React.FC = () => {
   return (
@@ -11,17 +13,17 @@ const Footer: React.FC = () => {
           <div className="space-y-6">
             <Link to="/" className="flex items-center space-x-2 text-white">
               <Car size={24} className="text-blue-500" />
-              <span className="text-2xl font-bold font-lexend">GlossMobile</span>
+              <span className="text-2xl font-bold font-lexend">AquaSpeed</span>
             </Link>
             <p className="text-sm leading-relaxed">
               Premium mobile detailing service brought directly to your driveway. We specialize in showroom-quality results using professional techniques and eco-friendly products.
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="bg-slate-800 p-2 rounded-full hover:bg-blue-600 transition-colors">
+              <a href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer" className="bg-slate-800 p-2 rounded-full hover:bg-blue-600 transition-colors">
                 <Instagram size={18} />
               </a>
-              <a href="#" className="bg-slate-800 p-2 rounded-full hover:bg-blue-600 transition-colors">
-                <Facebook size={18} />
+              <a href={TIKTOK_URL} target="_blank" rel="noopener noreferrer" className="bg-slate-800 p-2 rounded-full hover:bg-blue-600 transition-colors">
+                <TikTokIcon size={18} />
               </a>
             </div>
           </div>
@@ -30,7 +32,7 @@ const Footer: React.FC = () => {
             <h4 className="text-white font-semibold mb-6">Quick Links</h4>
             <ul className="space-y-3 text-sm">
               <li><Link to="/services" className="hover:text-blue-400">Services & Pricing</Link></li>
-              <li><Link to="/booking" className="hover:text-blue-400">Book Online</Link></li>
+              <li><a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="hover:text-blue-400">Book Online</a></li>
               <li><Link to="/gallery" className="hover:text-blue-400">Before & After</Link></li>
               <li><Link to="/about" className="hover:text-blue-400">About Us</Link></li>
             </ul>
@@ -41,15 +43,15 @@ const Footer: React.FC = () => {
             <ul className="space-y-3 text-sm">
               <li className="flex items-center space-x-3">
                 <Phone size={16} className="text-blue-500" />
-                <span>(555) 123-4567</span>
+                <span>(385) 562-3250</span>
               </li>
               <li className="flex items-center space-x-3">
                 <Mail size={16} className="text-blue-500" />
-                <span>hello@glossmobile.com</span>
+                <span>aquaspeed723@gmail.com</span>
               </li>
               <li className="flex items-center space-x-3">
                 <MapPin size={16} className="text-blue-500" />
-                <span>Los Angeles & Surrounding Areas</span>
+                <span>Serving All of Utah</span>
               </li>
             </ul>
           </div>
@@ -74,7 +76,7 @@ const Footer: React.FC = () => {
         </div>
         
         <div className="pt-8 border-t border-slate-800 text-center text-xs opacity-60">
-          <p>© {new Date().getFullYear()} GlossMobile Detailing. All rights reserved. Designed for Excellence.</p>
+          <p>© {new Date().getFullYear()} AquaSpeed Detailing. All rights reserved. Designed for Excellence.</p>
         </div>
       </div>
     </footer>

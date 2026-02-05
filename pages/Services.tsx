@@ -1,22 +1,9 @@
 
-import React, { useState } from 'react';
-import { PACKAGES } from '../constants';
-import { CheckCircle, Info, Sparkles, Wand2, Loader2, PlusCircle } from 'lucide-react';
-import { getPackageRecommendation } from '../services/geminiService';
+import React from 'react';
+import { PACKAGES, BOOKING_URL } from '../constants';
+import { CheckCircle, Info } from 'lucide-react';
 
 const Services: React.FC = () => {
-  const [desc, setDesc] = useState('');
-  const [loading, setLoading] = useState(false);
-  const [recommendation, setRecommendation] = useState<any>(null);
-
-  const handleRecommend = async () => {
-    if (!desc.trim()) return;
-    setLoading(true);
-    const result = await getPackageRecommendation(desc);
-    setRecommendation(result);
-    setLoading(false);
-  };
-
   return (
     <div className="min-h-screen bg-slate-50">
       {/* Header */}
@@ -29,71 +16,6 @@ const Services: React.FC = () => {
           <p className="text-xl text-slate-300">Choose from our precision-engineered detailing options.</p>
         </div>
       </header>
-
-      {/* AI Assistant Section */}
-      <section className="py-12 -mt-10 relative z-20 max-w-3xl mx-auto px-4">
-        <div className="bg-white rounded-3xl p-8 shadow-2xl border border-blue-100 flex flex-col md:flex-row gap-8 items-center">
-          <div className="bg-blue-600/10 p-4 rounded-full text-blue-600 shrink-0">
-            <Wand2 size={40} />
-          </div>
-          <div className="flex-grow space-y-4 w-full">
-            <h4 className="text-xl font-bold font-lexend">Not sure what you need?</h4>
-            <p className="text-slate-600 text-sm">Describe your car's state and our AI will suggest a package + add-ons.</p>
-            <div className="flex flex-col sm:flex-row gap-2">
-              <input 
-                type="text" 
-                placeholder="Ex: Stained seats and cloudy headlights..."
-                className="flex-grow px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-blue-600 focus:outline-none text-sm"
-                value={desc}
-                onChange={(e) => setDesc(e.target.value)}
-                onKeyPress={(e) => e.key === 'Enter' && handleRecommend()}
-              />
-              <button 
-                onClick={handleRecommend}
-                disabled={loading}
-                className="bg-blue-600 text-white px-6 py-3 rounded-xl font-bold hover:bg-blue-700 disabled:opacity-50 flex items-center justify-center whitespace-nowrap"
-              >
-                {loading ? <Loader2 className="animate-spin" size={20} /> : 'Get Advice'}
-              </button>
-            </div>
-            {recommendation && (
-              <div className="mt-6 p-6 bg-blue-50 rounded-[2rem] border border-blue-100 animate-in fade-in slide-in-from-top-4 duration-500">
-                <div className="flex items-center space-x-2 mb-4 text-blue-800 font-black text-lg">
-                  <Sparkles size={24} className="text-blue-600" />
-                  <span>{recommendation.recommendedPackage}</span>
-                </div>
-                
-                <p className="text-sm text-slate-700 mb-4 leading-relaxed">
-                  <span className="font-bold">Why?</span> {recommendation.reasoning}
-                </p>
-
-                {recommendation.suggestedAddons && recommendation.suggestedAddons.length > 0 && (
-                  <div className="mb-4">
-                    <p className="text-xs font-bold uppercase tracking-widest text-blue-600 mb-2">Suggested Add-ons</p>
-                    <div className="flex flex-wrap gap-2">
-                      {recommendation.suggestedAddons.map((addon: string, i: number) => (
-                        <span key={i} className="bg-white border border-blue-200 px-3 py-1 rounded-full text-xs font-semibold text-blue-700 flex items-center">
-                          <PlusCircle size={10} className="mr-1" /> {addon}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                )}
-
-                <div className="flex items-center justify-between pt-4 border-t border-blue-200/50">
-                  <p className="text-xs text-slate-500 font-medium uppercase tracking-widest">Est. Time: {recommendation.estimatedTime}</p>
-                  <a 
-                    href={`#/booking?package=${PACKAGES.find(p => p.name.includes(recommendation.recommendedPackage))?.id || ''}`}
-                    className="text-blue-600 text-sm font-bold hover:underline"
-                  >
-                    Book This Plan →
-                  </a>
-                </div>
-              </div>
-            )}
-          </div>
-        </div>
-      </section>
 
       {/* Package Grid */}
       <section className="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -121,7 +43,7 @@ const Services: React.FC = () => {
                 </ul>
               </div>
               <div className="mt-12">
-                <a href={`#/booking?package=${pkg.id}`} className="block w-full text-center bg-slate-900 text-white py-5 rounded-2xl font-bold text-lg hover:bg-blue-600 transition-colors shadow-lg shadow-slate-200">
+                <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="block w-full text-center bg-slate-900 text-white py-5 rounded-2xl font-bold text-lg hover:bg-blue-600 transition-colors shadow-lg shadow-slate-200">
                   Select This Package
                 </a>
               </div>

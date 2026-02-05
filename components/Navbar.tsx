@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, Car } from 'lucide-react';
+import { BOOKING_URL } from '../constants';
 
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -27,7 +28,7 @@ const Navbar: React.FC = () => {
                 <Car size={24} />
               </div>
               <span className="text-2xl font-bold font-lexend tracking-tight text-slate-900">
-                Gloss<span className="text-blue-600">Mobile</span>
+                Aqua<span className="text-blue-600">Speed</span>
               </span>
             </Link>
           </div>
@@ -46,12 +47,14 @@ const Navbar: React.FC = () => {
                 {link.name}
               </Link>
             ))}
-            <Link
-              to="/booking"
+            <a
+              href={BOOKING_URL}
+              target="_blank"
+              rel="noopener noreferrer"
               className="bg-blue-600 text-white px-6 py-2.5 rounded-full font-semibold text-sm hover:bg-blue-700 transition-all shadow-lg shadow-blue-200 active:scale-95"
             >
               Book Now
-            </Link>
+            </a>
           </div>
 
           <div className="md:hidden flex items-center">
@@ -78,13 +81,15 @@ const Navbar: React.FC = () => {
               {link.name}
             </Link>
           ))}
-          <Link
-            to="/booking"
+          <a
+            href={BOOKING_URL}
+            target="_blank"
+            rel="noopener noreferrer"
             onClick={() => setIsOpen(false)}
             className="block px-4 py-4 rounded-lg bg-blue-600 text-white text-center font-bold"
           >
             Book Now
-          </Link>
+          </a>
         </div>
       )}
     </nav>

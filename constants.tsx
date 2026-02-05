@@ -1,6 +1,10 @@
 
 import { PackageType, DetailPackage, GalleryItem } from './types';
 
+export const BOOKING_URL = 'https://www.app.brnno.io/aqua-speed-detailing';
+export const INSTAGRAM_URL = 'https://www.instagram.com/detailing_aquaspeed/';
+export const TIKTOK_URL = 'https://www.tiktok.com/@aquaspeed23';
+
 export interface Testimonial {
   id: string;
   name: string;
@@ -13,7 +17,7 @@ export interface Testimonial {
 export const PACKAGES: DetailPackage[] = [
   {
     id: 'ext-pro',
-    name: 'Pro Exterior',
+    name: 'Full Exterior Detail',
     type: PackageType.EXTERIOR,
     price: '$79',
     description: 'A thorough deep clean for your vehicle\'s exterior surfaces.',
@@ -29,7 +33,7 @@ export const PACKAGES: DetailPackage[] = [
   },
   {
     id: 'int-pro',
-    name: 'Pristine Interior',
+    name: 'Full Interior Detail',
     type: PackageType.INTERIOR,
     price: '$129',
     description: 'Transform your cabin into a showroom-fresh environment.',
@@ -45,7 +49,7 @@ export const PACKAGES: DetailPackage[] = [
   },
   {
     id: 'full-showroom',
-    name: 'Showroom Detail',
+    name: 'Full Detail',
     type: PackageType.FULL,
     price: '$199',
     description: 'The ultimate restoration for both inside and out.',
@@ -64,24 +68,33 @@ export const PACKAGES: DetailPackage[] = [
 export const GALLERY: GalleryItem[] = [
   {
     id: '1',
-    title: 'Range Rover Paint Correction',
-    category: 'Paint Correction',
-    before: 'https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?auto=format&fit=crop&q=80&w=600',
-    after: 'https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&q=80&w=600'
+    image: 'https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&q=80&w=800',
+    caption: 'Showroom finish'
   },
   {
     id: '2',
-    title: 'Family Van Interior Revive',
-    category: 'Interior',
-    before: 'https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&q=80&w=600',
-    after: 'https://images.unsplash.com/photo-1619767886558-efdc259cde1a?auto=format&fit=crop&q=80&w=600'
+    image: 'https://images.unsplash.com/photo-1619767886558-efdc259cde1a?auto=format&fit=crop&q=80&w=800',
+    caption: 'Interior detail'
   },
   {
     id: '3',
-    title: 'Classic Mustang Restoration',
-    category: 'Exterior',
-    before: 'https://images.unsplash.com/photo-1583121274602-3e2820c69888?auto=format&fit=crop&q=80&w=600',
-    after: 'https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&q=80&w=600'
+    image: 'https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&q=80&w=800',
+    caption: 'Exterior detail'
+  },
+  {
+    id: '4',
+    image: 'https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?auto=format&fit=crop&q=80&w=800',
+    caption: 'Paint care'
+  },
+  {
+    id: '5',
+    image: 'https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&q=80&w=800',
+    caption: 'Full detail'
+  },
+  {
+    id: '6',
+    image: 'https://images.unsplash.com/photo-1583121274602-3e2820c69888?auto=format&fit=crop&q=80&w=800',
+    caption: 'Premium finish'
   }
 ];
 
@@ -90,7 +103,7 @@ export const TESTIMONIALS: Testimonial[] = [
     id: 't1',
     name: 'Sarah Jenkins',
     role: 'Tesla Model S Owner',
-    content: 'GlossMobile is a lifesaver. They detailed my car while I was in meetings, and I walked out to a car that looked better than the day I bought it. Absolutely impeccable service.',
+    content: 'AquaSpeed is a lifesaver. They detailed my car while I was in meetings, and I walked out to a car that looked better than the day I bought it. Absolutely impeccable service.',
     photo: 'https://i.pravatar.cc/150?u=sarah',
     rating: 5
   },
@@ -106,7 +119,7 @@ export const TESTIMONIALS: Testimonial[] = [
     id: 't3',
     name: 'Michael Ross',
     role: 'Family SUV Owner',
-    content: 'With three kids and a dog, my interior was a disaster. GlossMobile spent 4 hours on it and managed to get every single stain out. It smells amazing!',
+    content: 'With three kids and a dog, my interior was a disaster. AquaSpeed spent 4 hours on it and managed to get every single stain out. It smells amazing!',
     photo: 'https://i.pravatar.cc/150?u=michael',
     rating: 5
   }
