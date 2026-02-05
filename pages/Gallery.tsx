@@ -34,12 +34,12 @@ const Gallery: React.FC = () => {
       </section>
 
       {/* Instagram CTA */}
-      <section className="py-24 bg-slate-900 text-white">
+      <section className="py-24 bg-black text-white">
         <div className="max-w-4xl mx-auto px-4 text-center space-y-8">
-          <Camera size={48} className="mx-auto text-blue-500" />
+          <Camera size={48} className="mx-auto text-red-500" />
           <h2 className="text-4xl font-bold font-lexend">See More on Instagram</h2>
           <p className="text-slate-400 text-lg">We post fresh results every single day. Follow us to see our latest work and get a behind-the-scenes look at our process.</p>
-          <a href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer" className="inline-flex items-center space-x-3 bg-white text-slate-900 px-10 py-5 rounded-full font-bold text-lg hover:bg-blue-600 hover:text-white transition-all">
+          <a href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer" className="inline-flex items-center space-x-3 bg-white text-slate-900 px-10 py-5 rounded-full font-bold text-lg hover:bg-red-600 hover:text-white transition-all">
             <ImageIcon size={24} />
             <span>Follow @detailing_aquaspeed</span>
           </a>

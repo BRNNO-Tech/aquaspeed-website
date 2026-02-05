@@ -7,7 +7,7 @@ import TikTokIcon from './TikTokIcon';
 
 const Footer: React.FC = () => {
   return (
-    <footer className="bg-slate-900 text-slate-300 pt-16 pb-8">
+    <footer className="bg-black text-slate-300 pt-16 pb-8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
           <div className="space-y-6">
@@ -19,10 +19,10 @@ const Footer: React.FC = () => {
               Premium mobile detailing service brought directly to your driveway. We specialize in showroom-quality results using professional techniques and eco-friendly products.
             </p>
             <div className="flex space-x-4">
-              <a href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer" className="bg-slate-800 p-2 rounded-full hover:bg-blue-600 transition-colors">
+              <a href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer" className="bg-slate-800 p-2 rounded-full hover:bg-red-600 transition-colors">
                 <Instagram size={18} />
               </a>
-              <a href={TIKTOK_URL} target="_blank" rel="noopener noreferrer" className="bg-slate-800 p-2 rounded-full hover:bg-blue-600 transition-colors">
+              <a href={TIKTOK_URL} target="_blank" rel="noopener noreferrer" className="bg-slate-800 p-2 rounded-full hover:bg-red-600 transition-colors">
                 <TikTokIcon size={18} />
               </a>
             </div>
@@ -69,7 +69,7 @@ const Footer: React.FC = () => {
               </li>
               <li className="flex justify-between">
                 <span>Sunday:</span>
-                <span className="text-white text-blue-400">By Appointment</span>
+                <span className="text-white text-red-400">By Appointment</span>
               </li>
             </ul>
           </div>

@@ -19,10 +19,6 @@ const Home: React.FC = () => {
         </div>
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-white">
           <div className="max-w-2xl space-y-8">
-            <div className="inline-flex items-center space-x-2 bg-blue-600/30 backdrop-blur-md px-4 py-2 rounded-full border border-blue-400/30">
-              <Star className="text-yellow-400 fill-yellow-400" size={16} />
-              <span className="text-sm font-semibold tracking-wide uppercase">Top-Rated Mobile Detailing</span>
-            </div>
             <h1 className="text-4xl md:text-6xl font-bold font-lexend leading-tight">
               Utah's Premium Mobile Detailing — <span className="text-blue-500">We Come to You</span>
             </h1>
@@ -30,7 +26,7 @@ const Home: React.FC = () => {
               AquaSpeed delivers professional detailing anywhere in Utah, bringing showroom‑quality results straight to your driveway.
             </p>
             <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-6">
-              <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="bg-blue-600 hover:bg-blue-700 text-white px-10 py-5 rounded-full font-bold text-lg transition-all shadow-xl shadow-blue-900/40 flex items-center justify-center group">
+              <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="bg-red-600 hover:bg-red-700 text-white px-10 py-5 rounded-full font-bold text-lg transition-all shadow-xl shadow-red-900/40 flex items-center justify-center group">
                 Book My Detail
                 <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
               </a>
@@ -90,7 +86,7 @@ const Home: React.FC = () => {
                 <div className="p-8 flex-grow space-y-6">
                   <div className="flex justify-between items-start">
                     <h4 className="text-2xl font-bold font-lexend text-slate-900">{pkg.name}</h4>
-                    <span className="text-2xl font-black text-blue-600">{pkg.price}</span>
+                    <span className="text-2xl font-black text-red-600">{pkg.price}</span>
                   </div>
                   <p className="text-slate-600 text-sm leading-relaxed">{pkg.description}</p>
                   <ul className="space-y-3">
@@ -107,7 +103,7 @@ const Home: React.FC = () => {
                     href={BOOKING_URL}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="block text-center bg-slate-900 text-white py-4 rounded-xl font-bold hover:bg-blue-600 transition-colors"
+                    className="block text-center bg-black text-white py-4 rounded-xl font-bold hover:bg-red-600 transition-colors"
                   >
                     Select Package
                   </a>
@@ -119,13 +115,13 @@ const Home: React.FC = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-24 bg-blue-600 relative overflow-hidden">
-        <div className="absolute top-0 right-0 -translate-y-1/2 translate-x-1/2 w-96 h-96 bg-blue-500 rounded-full opacity-20"></div>
-        <div className="absolute bottom-0 left-0 translate-y-1/2 -translate-x-1/2 w-64 h-64 bg-blue-400 rounded-full opacity-20"></div>
+      <section className="py-24 bg-red-600 relative overflow-hidden">
+        <div className="absolute top-0 right-0 -translate-y-1/2 translate-x-1/2 w-96 h-96 bg-red-500 rounded-full opacity-20"></div>
+        <div className="absolute bottom-0 left-0 translate-y-1/2 -translate-x-1/2 w-64 h-64 bg-red-400 rounded-full opacity-20"></div>
         <div className="max-w-4xl mx-auto px-4 text-center relative z-10 space-y-8">
           <h2 className="text-4xl md:text-5xl font-bold font-lexend text-white">Ready for a spotless ride?</h2>
-          <p className="text-xl text-blue-100">Booking takes less than 2 minutes. We'll handle the rest.</p>
-          <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="inline-block bg-white text-blue-600 px-12 py-5 rounded-full font-bold text-xl hover:bg-slate-50 transition-all shadow-xl shadow-blue-900/30">
+          <p className="text-xl text-red-100">Booking takes less than 2 minutes. We'll handle the rest.</p>
+          <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="inline-block bg-white text-red-600 px-12 py-5 rounded-full font-bold text-xl hover:bg-slate-50 transition-all shadow-xl shadow-red-900/30">
             Book Your Detail
           </a>
         </div>

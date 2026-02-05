@@ -51,7 +51,7 @@ const Navbar: React.FC = () => {
               href={BOOKING_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-blue-600 text-white px-6 py-2.5 rounded-full font-semibold text-sm hover:bg-blue-700 transition-all shadow-lg shadow-blue-200 active:scale-95"
+              className="bg-red-600 text-white px-6 py-2.5 rounded-full font-semibold text-sm hover:bg-red-700 transition-all shadow-lg shadow-red-200 active:scale-95"
             >
               Book Now
             </a>
@@ -86,7 +86,7 @@ const Navbar: React.FC = () => {
             target="_blank"
             rel="noopener noreferrer"
             onClick={() => setIsOpen(false)}
-            className="block px-4 py-4 rounded-lg bg-blue-600 text-white text-center font-bold"
+            className="block px-4 py-4 rounded-lg bg-red-600 text-white text-center font-bold"
           >
             Book Now
           </a>

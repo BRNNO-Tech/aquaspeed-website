@@ -9,7 +9,7 @@ const About: React.FC = () => {
       <section className="py-24 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto text-center">
         <h1 className="text-5xl md:text-6xl font-bold font-lexend text-slate-900 leading-tight mb-6">
           Driven by Perfection, <br />
-          <span className="text-blue-600">Defined by Care.</span>
+          <span className="text-red-600">Defined by Care.</span>
         </h1>
         <p className="text-xl text-slate-600 leading-relaxed max-w-3xl mx-auto">
           AquaSpeed is a Utah-based mobile detailing company committed to delivering high-quality results with unmatched convenience. Whether you're at home, work, or on the go, we bring the detail shop to you — anywhere in Utah.
@@ -30,28 +30,28 @@ const About: React.FC = () => {
           <h2 className="text-3xl font-bold font-lexend text-slate-900 mb-12">What Sets Us Apart</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="bg-white p-8 rounded-2xl border border-slate-100">
-              <div className="bg-blue-600/10 w-12 h-12 rounded-xl flex items-center justify-center mb-4 text-blue-600">
+              <div className="bg-red-600/10 w-12 h-12 rounded-xl flex items-center justify-center mb-4 text-red-600">
                 <MapPin size={24} />
               </div>
               <h3 className="text-xl font-bold font-lexend mb-3">Fully Mobile</h3>
               <p className="text-slate-600">We bring water, power, and everything needed — no hookups required.</p>
             </div>
             <div className="bg-white p-8 rounded-2xl border border-slate-100">
-              <div className="bg-blue-600/10 w-12 h-12 rounded-xl flex items-center justify-center mb-4 text-blue-600">
+              <div className="bg-red-600/10 w-12 h-12 rounded-xl flex items-center justify-center mb-4 text-red-600">
                 <Package size={24} />
               </div>
               <h3 className="text-xl font-bold font-lexend mb-3">Premium Products</h3>
               <p className="text-slate-600">We use industry-leading tools and eco-friendly chemicals for every job.</p>
             </div>
             <div className="bg-white p-8 rounded-2xl border border-slate-100">
-              <div className="bg-blue-600/10 w-12 h-12 rounded-xl flex items-center justify-center mb-4 text-blue-600">
+              <div className="bg-red-600/10 w-12 h-12 rounded-xl flex items-center justify-center mb-4 text-red-600">
                 <Users size={24} />
               </div>
               <h3 className="text-xl font-bold font-lexend mb-3">Experienced Detailers</h3>
               <p className="text-slate-600">Our team is trained, certified, and obsessed with results.</p>
             </div>
             <div className="bg-white p-8 rounded-2xl border border-slate-100">
-              <div className="bg-blue-600/10 w-12 h-12 rounded-xl flex items-center justify-center mb-4 text-blue-600">
+              <div className="bg-red-600/10 w-12 h-12 rounded-xl flex items-center justify-center mb-4 text-red-600">
                 <Shield size={24} />
               </div>
               <h3 className="text-xl font-bold font-lexend mb-3">Statewide Service</h3>

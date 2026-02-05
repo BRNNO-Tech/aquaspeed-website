@@ -7,7 +7,7 @@ const Services: React.FC = () => {
   return (
     <div className="min-h-screen bg-slate-50">
       {/* Header */}
-      <header className="bg-slate-900 py-20 text-white text-center relative overflow-hidden">
+      <header className="bg-black py-20 text-white text-center relative overflow-hidden">
         <div className="absolute inset-0 opacity-20">
           <img src="https://images.unsplash.com/photo-1601362840469-51e4d8d59085?auto=format&fit=crop&q=80&w=2000" className="w-full h-full object-cover" alt="Detailing" />
         </div>
@@ -29,21 +29,21 @@ const Services: React.FC = () => {
                 <div>
                   <h3 className="text-3xl font-bold font-lexend text-slate-900 mb-2">{pkg.name}</h3>
                   <p className="text-slate-500 text-sm uppercase tracking-widest font-bold">Starts at</p>
-                  <p className="text-5xl font-black text-blue-600 mb-4">{pkg.price}</p>
+                  <p className="text-5xl font-black text-red-600 mb-4">{pkg.price}</p>
                 </div>
                 <p className="text-slate-600 leading-relaxed">{pkg.description}</p>
                 <div className="h-px bg-slate-100"></div>
                 <ul className="space-y-4">
                   {pkg.features.map((f, i) => (
                     <li key={i} className="flex items-start text-slate-700">
-                      <CheckCircle size={18} className="text-blue-500 mr-3 mt-1 shrink-0" />
+                      <CheckCircle size={18} className="text-red-500 mr-3 mt-1 shrink-0" />
                       <span className="text-sm font-medium">{f}</span>
                     </li>
                   ))}
                 </ul>
               </div>
               <div className="mt-12">
-                <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="block w-full text-center bg-slate-900 text-white py-5 rounded-2xl font-bold text-lg hover:bg-blue-600 transition-colors shadow-lg shadow-slate-200">
+                <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="block w-full text-center bg-black text-white py-5 rounded-2xl font-bold text-lg hover:bg-red-600 transition-colors shadow-lg shadow-slate-200">
                   Select This Package
                 </a>
               </div>
@@ -68,7 +68,7 @@ const Services: React.FC = () => {
             ].map((addon, i) => (
               <div key={i} className="bg-slate-50 p-8 rounded-3xl border border-slate-100 flex flex-col items-center text-center space-y-4">
                 <h5 className="font-bold text-lg text-slate-900">{addon.name}</h5>
-                <p className="text-blue-600 font-bold text-2xl">{addon.price}</p>
+                <p className="text-red-600 font-bold text-2xl">{addon.price}</p>
                 <p className="text-slate-500 text-sm leading-relaxed">{addon.desc}</p>
               </div>
             ))}

@@ -8,7 +8,7 @@ const Booking: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-slate-50 flex items-center justify-center">
-      <p className="text-slate-600 font-medium">Redirecting to booking...</p>
+      <p className="text-red-600 font-medium">Redirecting to booking...</p>
     </div>
   );
 };
