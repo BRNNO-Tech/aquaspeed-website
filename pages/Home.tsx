@@ -3,8 +3,12 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Shield, Clock, MapPin, CheckCircle, Star } from 'lucide-react';
 import { PACKAGES, BOOKING_URL } from '../constants';
+import { useInView } from '../hooks/useInView';
 
 const Home: React.FC = () => {
+  const featuresRef = useInView();
+  const servicesRef = useInView();
+  const ctaRef = useInView();
 
   return (
     <div className="space-y-0">
@@ -19,20 +23,26 @@ const Home: React.FC = () => {
         </div>
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-white">
           <div className="max-w-2xl space-y-8">
-            <h1 className="text-4xl md:text-6xl font-bold font-lexend leading-tight">
-              Utah's Premium Mobile Detailing — <span className="text-blue-500">We Come to You</span>
-            </h1>
-            <p className="text-xl text-slate-200 leading-relaxed">
-              AquaSpeed delivers professional detailing anywhere in Utah, bringing showroom‑quality results straight to your driveway.
-            </p>
-            <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-6">
-              <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="bg-red-600 hover:bg-red-700 text-white px-10 py-5 rounded-full font-bold text-lg transition-all shadow-xl shadow-red-900/40 flex items-center justify-center group">
-                Book My Detail
-                <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
-              </a>
-              <Link to="/services" className="bg-white/10 hover:bg-white/20 backdrop-blur-md text-white border border-white/30 px-10 py-5 rounded-full font-bold text-lg transition-all flex items-center justify-center">
-                View Packages
-              </Link>
+            <div className="animate-fade-slide-up-on-mount" style={{ animationDelay: '0ms' }}>
+              <h1 className="text-4xl md:text-6xl font-bold font-lexend leading-tight">
+                Utah's Premium Mobile Detailing — <span className="text-blue-500">We Come to You</span>
+              </h1>
+            </div>
+            <div className="animate-fade-slide-up-on-mount" style={{ animationDelay: '100ms' }}>
+              <p className="text-xl text-slate-200 leading-relaxed">
+                AquaSpeed delivers professional detailing anywhere in Utah, bringing showroom‑quality results straight to your driveway.
+              </p>
+            </div>
+            <div className="animate-fade-slide-up-on-mount" style={{ animationDelay: '200ms' }}>
+              <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-6">
+                <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="bg-red-600 hover:bg-red-700 text-white px-10 py-5 rounded-full font-bold text-lg transition-all shadow-xl shadow-red-900/40 flex items-center justify-center group">
+                  Book My Detail
+                  <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
+                </a>
+                <Link to="/services" className="bg-white/10 hover:bg-white/20 backdrop-blur-md text-white border border-white/30 px-10 py-5 rounded-full font-bold text-lg transition-all flex items-center justify-center">
+                  View Packages
+                </Link>
+              </div>
             </div>
           </div>
         </div>
@@ -40,7 +50,7 @@ const Home: React.FC = () => {
 
       {/* Features Summary */}
       <section className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div ref={featuresRef as React.RefObject<HTMLDivElement>} className="reveal-section max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
             <h3 className="text-4xl font-bold font-lexend text-slate-900">Why Utah Drivers Choose AquaSpeed</h3>
           </div>
@@ -52,7 +62,7 @@ const Home: React.FC = () => {
               { icon: <CheckCircle className="text-blue-600" />, title: 'Transparent pricing', text: 'No hidden fees or surprises. Clear, upfront pricing for all our services.' },
               { icon: <Star className="text-blue-600" />, title: 'Satisfaction guaranteed', text: 'We stand behind our work with a satisfaction guarantee. Your car will look its best or we\'ll make it right.' }
             ].map((feature, i) => (
-              <div key={i} className="bg-slate-50 p-10 rounded-3xl border border-slate-100 hover:shadow-xl transition-shadow group">
+              <div key={i} className="reveal-item bg-slate-50 p-10 rounded-3xl border border-slate-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-200 group" style={{ animationDelay: `${i * 60}ms` }}>
                 <div className="bg-white w-14 h-14 rounded-2xl flex items-center justify-center mb-6 shadow-sm group-hover:scale-110 transition-transform">
                   {React.cloneElement(feature.icon as React.ReactElement, { size: 28 })}
                 </div>
@@ -66,7 +76,7 @@ const Home: React.FC = () => {
 
       {/* Quick Services List */}
       <section className="py-24 bg-slate-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div ref={servicesRef as React.RefObject<HTMLDivElement>} className="reveal-section max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
             <div className="max-w-xl space-y-4">
               <h2 className="text-4xl font-bold font-lexend text-slate-900">Popular Services</h2>
@@ -78,8 +88,8 @@ const Home: React.FC = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {PACKAGES.map((pkg) => (
-              <div key={pkg.id} className="bg-white rounded-3xl overflow-hidden shadow-lg border border-slate-100 flex flex-col h-full">
+            {PACKAGES.map((pkg, i) => (
+              <div key={pkg.id} className="reveal-item bg-white rounded-3xl overflow-hidden shadow-lg border border-slate-100 flex flex-col h-full hover:-translate-y-1 transition-transform duration-200" style={{ animationDelay: `${i * 80}ms` }}>
                 <div className="h-48 overflow-hidden">
                   <img src={pkg.image} alt={pkg.name} className="w-full h-full object-cover" />
                 </div>
@@ -118,7 +128,7 @@ const Home: React.FC = () => {
       <section className="py-24 bg-red-600 relative overflow-hidden">
         <div className="absolute top-0 right-0 -translate-y-1/2 translate-x-1/2 w-96 h-96 bg-red-500 rounded-full opacity-20"></div>
         <div className="absolute bottom-0 left-0 translate-y-1/2 -translate-x-1/2 w-64 h-64 bg-red-400 rounded-full opacity-20"></div>
-        <div className="max-w-4xl mx-auto px-4 text-center relative z-10 space-y-8">
+        <div ref={ctaRef as React.RefObject<HTMLDivElement>} className="animate-fade-slide-up max-w-4xl mx-auto px-4 text-center relative z-10 space-y-8">
           <h2 className="text-4xl md:text-5xl font-bold font-lexend text-white">Ready for a spotless ride?</h2>
           <p className="text-xl text-red-100">Booking takes less than 2 minutes. We'll handle the rest.</p>
           <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="inline-block bg-white text-red-600 px-12 py-5 rounded-full font-bold text-xl hover:bg-slate-50 transition-all shadow-xl shadow-red-900/30">
