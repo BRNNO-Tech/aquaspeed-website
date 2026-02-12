@@ -18,7 +18,7 @@ const Home: React.FC = () => {
           <img 
             src="https://images.unsplash.com/photo-1520340356584-f9917d1eea6f?auto=format&fit=crop&q=80&w=2000" 
             className="w-full h-full object-cover brightness-50"
-            alt="Shiny car detailing"
+            alt="AquaSpeed detailing"
           />
         </div>
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-white">
@@ -39,7 +39,7 @@ const Home: React.FC = () => {
                   Book My Detail
                   <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
                 </a>
-                <Link to="/services" className="bg-white/10 hover:bg-white/20 backdrop-blur-md text-white border border-white/30 px-10 py-5 rounded-full font-bold text-lg transition-all flex items-center justify-center">
+                <Link to="/services" className="bg-white/60 hover:bg-white/50 text-black border border-white/30 px-10 py-5 rounded-full font-bold text-lg transition-all flex items-center justify-center">
                   View Packages
                 </Link>
               </div>

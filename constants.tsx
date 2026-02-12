@@ -68,33 +68,33 @@ export const PACKAGES: DetailPackage[] = [
 export const GALLERY: GalleryItem[] = [
   {
     id: '1',
-    image: 'https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&q=80&w=800',
-    caption: 'Showroom finish'
-  },
-  {
-    id: '2',
-    image: 'https://images.unsplash.com/photo-1619767886558-efdc259cde1a?auto=format&fit=crop&q=80&w=800',
-    caption: 'Interior detail'
-  },
-  {
-    id: '3',
-    image: 'https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&q=80&w=800',
+    image: 'public/images/gallery/c8_z06.jpg',
     caption: 'Exterior detail'
   },
   {
+    id: '2',
+    image: 'public/images/gallery/detailing_van.jpg',
+    caption: 'Mobile setup ready to go'
+  },
+  {
+    id: '3',
+    image: 'public/images/gallery/engine_bay.jpg',
+    caption: 'Engine bay detail'
+  },
+  {
     id: '4',
-    image: 'https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?auto=format&fit=crop&q=80&w=800',
+    image: 'public/images/gallery/ford_fusion.PNG',
     caption: 'Paint care'
   },
   {
     id: '5',
-    image: 'https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&q=80&w=800',
-    caption: 'Full detail'
+    image: 'public/images/gallery/picture.PNG',
+    caption: 'Wheel and tire cleaning'
   },
   {
     id: '6',
-    image: 'https://images.unsplash.com/photo-1583121274602-3e2820c69888?auto=format&fit=crop&q=80&w=800',
-    caption: 'Premium finish'
+    image: 'public/images/gallery/seats.jpg',
+    caption: 'Interior before and after'
   }
 ];
 
