@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { PACKAGES, BOOKING_URL } from '../constants';
-import { CheckCircle, Info } from 'lucide-react';
+import { CheckCircle } from 'lucide-react';
 import { useInView } from '../hooks/useInView';
 
 const Services: React.FC = () => {
@@ -14,7 +14,7 @@ const Services: React.FC = () => {
       {/* Header */}
       <header className="bg-black py-20 text-white text-center relative overflow-hidden">
         <div className="absolute inset-0 opacity-20">
-          <img src="https://images.unsplash.com/photo-1601362840469-51e4d8d59085?auto=format&fit=crop&q=80&w=2000" className="w-full h-full object-cover" alt="Detailing" />
+          <img src="https://images.unsplash.com/photo-1601362840469-51e4d8d59085?auto=format&fit=crop&q=80&w=2000" className="w-full h-full object-cover" alt="" />
         </div>
         <div ref={headerRef as React.RefObject<HTMLDivElement>} className="animate-fade-slide-up relative z-10 max-w-4xl mx-auto px-4 space-y-4">
           <h1 className="text-5xl font-bold font-lexend">Our Packages</h1>
@@ -27,9 +27,6 @@ const Services: React.FC = () => {
         <div ref={packagesRef as React.RefObject<HTMLDivElement>} className="reveal-section grid grid-cols-1 md:grid-cols-3 gap-12">
           {PACKAGES.map((pkg, i) => (
             <div key={pkg.id} className="reveal-item bg-white rounded-[2.5rem] p-10 shadow-sm hover:shadow-2xl hover:-translate-y-1 transition-all duration-200 border border-slate-100 flex flex-col relative group overflow-hidden" style={{ animationDelay: `${i * 80}ms` }}>
-               <div className="absolute top-0 right-0 p-6 opacity-5 group-hover:opacity-10 transition-opacity">
-                <Info size={120} />
-              </div>
               <div className="space-y-6 flex-grow">
                 <div>
                   <h3 className="text-3xl font-bold font-lexend text-slate-900 mb-2">{pkg.name}</h3>
@@ -61,7 +58,7 @@ const Services: React.FC = () => {
       <section className="py-24 bg-white">
         <div ref={addonsRef as React.RefObject<HTMLDivElement>} className="reveal-section max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold font-lexend mb-4">Powerful Add-ons</h2>
+            <h2 className="text-4xl font-bold font-lexend mb-4">Popular Add-ons</h2>
             <p className="text-slate-600">Upgrade your experience with targeted restorations.</p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">

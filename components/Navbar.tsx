@@ -21,7 +21,7 @@ const Navbar: React.FC = () => {
   const isActive = (path: string) => location.pathname === path;
 
   return (
-    <nav className="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-200">
+    <nav className="sticky top-0 z-50 bg-black backdrop-blur-md border-b border-slate-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-20">
           <div className="flex items-center">
@@ -42,8 +42,8 @@ const Navbar: React.FC = () => {
                 to={link.path}
                 className={`${
                   isActive(link.path)
-                    ? 'text-blue-600 font-semibold'
-                    : 'text-slate-600 hover:text-blue-600'
+                    ? 'text-white font-semibold'
+                    : 'text-slate-300 hover:text-white'
                 } transition-colors duration-200 text-sm uppercase tracking-wider`}
               >
                 {link.name}
@@ -62,7 +62,7 @@ const Navbar: React.FC = () => {
           <div className="md:hidden flex items-center">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="text-slate-600 p-2"
+              className="text-white p-2"
             >
               {isOpen ? <X size={28} /> : <Menu size={28} />}
             </button>
@@ -72,13 +72,13 @@ const Navbar: React.FC = () => {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="md:hidden bg-white border-b border-slate-200 py-4 px-4 space-y-2 animate-in slide-in-from-top duration-300">
+        <div className="md:hidden bg-black border-b border-slate-800 py-4 px-4 space-y-2 animate-in slide-in-from-top duration-300">
           {links.map((link) => (
             <Link
               key={link.path}
               to={link.path}
               onClick={() => setIsOpen(false)}
-              className="block px-4 py-3 rounded-lg text-slate-700 hover:bg-slate-50 font-medium"
+              className="block px-4 py-3 rounded-lg text-slate-200 hover:bg-slate-800 font-medium"
             >
               {link.name}
             </Link>
